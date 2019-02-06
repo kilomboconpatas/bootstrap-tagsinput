@@ -20,6 +20,9 @@
     itemTitle: function(item) {
       return null;
     },
+    itemBgColor: function(item) {
+        return '#86abf9';
+    },
     freeInput: true,
     addOnBlur: true,
     maxTags: undefined,
@@ -113,6 +116,7 @@
           itemText = self.options.itemText(item),
           tagClass = self.options.tagClass(item),
           itemTitle = self.options.itemTitle(item);
+          itemBgColor = self.options.itemBgColor(item);
 
       // Ignore items allready added
       var existing = $.grep(self.itemsArray, function(item) { return self.options.itemValue(item) === itemValue; } )[0];
@@ -140,7 +144,7 @@
 
       // add a tag element
 
-      var $tag = $('<span class="tag ' + htmlEncode(tagClass) + (itemTitle !== null ? ('" title="' + itemTitle) : '') + '">' + htmlEncode(itemText) + '<span data-role="remove"></span></span>');
+      var $tag = $('<span style="background-color: ' + itemBgColor+ '" class="tag ' + htmlEncode(tagClass) + (itemTitle !== null ? ('" title="' + itemTitle) : '') + '">' + htmlEncode(itemText) + '<span data-role="remove"></span></span>');
       $tag.data('item', item);
       self.findInputWrapper().before($tag);
       $tag.after(' ');
