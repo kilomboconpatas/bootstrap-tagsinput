@@ -115,7 +115,7 @@
       var itemValue = self.options.itemValue(item),
           itemText = self.options.itemText(item),
           tagClass = self.options.tagClass(item),
-          itemTitle = self.options.itemTitle(item);
+          itemTitle = self.options.itemTitle(item),
           itemBgColor = self.options.itemBgColor(item);
 
       // Ignore items allready added
